@@ -20,98 +20,218 @@
         .shadow-blue-500/30 {
             box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.3), 0 8px 10px -6px rgba(59, 130, 246, 0.25);
         }
+        .shadow-orange-500/30 {
+            box-shadow: 0 10px 25px -5px rgba(249, 115, 22, 0.3), 0 8px 10px -6px rgba(249, 115, 22, 0.25);
+        }
         .hover-animate {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             transform-origin: center;
         }
+        .section-divider {
+            border-top: 1px solid rgba(59, 130, 246, 0.1);
+        }
+        /* Sticky Navigation Styles */
+        .sticky-nav {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 50;
+        }
+        .nav-dot {
+            width: 10px; /* Increased from 5px to 10px */
+            height: 10px; /* Increased from 5px to 10px */
+            background-color: #bfdbfe; /* Tailwind's blue-200 */
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+        .nav-dot.active {
+            background-color: #2563eb; /* Tailwind's blue-600 */
+        }
     </style>
 </head>
 <body class="bg-gray-100">
+    <!-- Sticky Navigation Sidebar -->
+    <div class="sticky-nav">
+        <a href="#hero" class="nav-dot" data-section="hero"></a>
+        <a href="#introducing" class="nav-dot" data-section="introducing"></a>
+        <a href="#features" class="nav-dot" data-section="features"></a>
+        <a href="#explore" class="nav-dot" data-section="explore"></a>
+        <a href="#examples" class="nav-dot" data-section="examples"></a>
+        <a href="#benefits" class="nav-dot" data-section="benefits"></a>
+        <a href="#receive" class="nav-dot" data-section="receive"></a>
+        <a href="#invest" class="nav-dot" data-section="invest"></a>
+        <a href="#testimonials" class="nav-dot" data-section="testimonials"></a>
+        <a href="#risk-free" class="nav-dot" data-section="risk-free"></a>
+        <a href="#faq" class="nav-dot" data-section="faq"></a>
+        <a href="#final-cta" class="nav-dot" data-section="final-cta"></a>
+    </div>
+
     <header class="bg-white shadow-md py-4">
         <div class="container mx-auto px-4 flex justify-center">
             <h1 class="heading-font text-2xl font-semibold text-blue-600">Stay Sharp</h1>
         </div>
     </header>
 
-    <section class="bg-gradient-to-br from-blue-100 to-purple-100 text-gray-800 py-16 md:py-24">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="heading-font text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-blue-700">
-                Rediscover Your Mental Clarity & Joy
-            </h2>
-            <p class="text-lg md:text-xl mb-8 md:mb-12 max-w-2xl mx-auto">
-                77 Brain Games & Memory Boosters for Seniors
-            </p>
-            <p class="text-md md:text-lg mb-6 max-w-3xl mx-auto">
-                Do you want to feel confident, engaged, and connected—enjoying life to the fullest, no matter your age? It’s easy to feel like memory and mental sharpness decline with age. But what if you could proactively nurture your mind, keeping it active, vibrant, and ready for all life has to offer?
-            </p>
-            <a href="#features" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full transition duration-300 ease-in-out shadow-lg hover:shadow-blue-500/20 hover-animate">
-                Learn More
-            </a>
-        </div>
-    </section>
+    <!-- Hero Header Section -->
+    <section id="hero" class="bg-gradient-to-br from-blue-50 to-indigo-50 py-16 md:py-20 section-divider">
+        <div class="container mx-auto px-4">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+                <!-- Text Content -->
+                <div class="md:w-5/8 text-center md:text-left">
+                    <div class="mb-6 space-y-4">
+                        <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-4 py-2 rounded-full">
+                            Trusted by 10,000+ Seniors
+                        </span>
+                        <div>
+                            <span class="bg-green-100 text-green-800 text-sm font-semibold px-4 py-2 rounded-full">
+                                Backed by 20+ Years of Cognitive Research
+                            </span>
+                        </div>
+                    </div>
+                    <h1 class="heading-font text-4xl md:text-6xl font-bold mb-6 text-gray-900 leading-tight">
+                        Stay Sharp:<br>
+                        <span class="text-blue-600">77 Brain Games for Seniors</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-700 mb-8 max-w-2xl mx-auto md:mx-0">
+                        Rediscover Mental Clarity & Joy<br class="hidden md:block">
+                        Designed for Senior Cognitive Health
+                    </p>
+                    
+                    <!-- Value Points -->
+                    <div class="mb-8 space-y-6">
+                        <div class="flex items-center justify-center md:justify-start gap-3">
+                            <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-lg text-gray-700">Improve Memory & Mental Agility</span>
+                        </div>
+                        <div class="flex items-center justify-center md:justify-start gap-3">
+                            <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-lg text-gray-700">Daily Exercises in Just 15 Minutes</span>
+                        </div>
+                        <div class="flex items-center justify-center md:justify-start gap-3">
+                            <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-lg text-gray-700">Proven to Support Brain Health</span>
+                        </div>
+                    </div>
 
-    <section class="bg-white py-12 md:py-16">
-        <div class="container mx-auto px-4 text-center">
-            <h3 class="heading-font text-2xl md:text-3xl font-semibold mb-6 text-gray-800">
-                Introducing Stay Sharp
-            </h3>
-            <p class="text-md md:text-lg max-w-3xl mx-auto text-gray-700">
-                Stay Sharp is a thoughtfully designed collection to help you reclaim your mental edge and embrace a more fulfilling life. This isn’t just about puzzles; it’s about empowering you to live with clarity, confidence, and joy.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10 md:mt-12">
-                <div class="p-6 bg-blue-50 shadow-md rounded-lg hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h4 class="heading-font text-xl font-semibold mb-2 text-blue-600">Stronger Connections</h4>
-                    <p class="text-gray-700">Easily recalling names and faces, strengthening connections with family and friends.</p>
+                    <!-- CTA Section -->
+                    <div class="mt-8">
+                        <a href="#features" class="inline-block bg-orange-500 hover:bg-orange-600 text-white text-xl font-semibold py-5 px-12 rounded-full transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-orange-500/30">
+                            Start Your Brain Journey Now →
+                        </a>
+                    </div>
+
+                    <!-- Guarantee Text -->
+                    <div class="mt-6">
+                        <p class="text-sm text-gray-600">
+                            <span class="border-b-2 border-blue-200">30-Day Money Back Guarantee</span><br>
+                            <span class="text-xs">No risk - Cancel anytime</span>
+                        </p>
+                    </div>
                 </div>
-                <div class="p-6 bg-blue-50 shadow-md rounded-lg hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h4 class="heading-font text-xl font-semibold mb-2 text-blue-600">Ease of Tasks</h4>
-                    <p class="text-gray-700">Managing daily tasks with ease and a sense of control.</p>
-                </div>
-                <div class="p-6 bg-blue-50 shadow-md rounded-lg hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h4 class="heading-font text-xl font-semibold mb-2 text-blue-600">Confident Conversations</h4>
-                    <p class="text-gray-700">Participating in conversations with confidence and sharing your wisdom.</p>
+
+                <!-- Image/Book Mockup -->
+                <div class="md:w-3/8 mt-12 md:mt-0">
+                    <div class="relative max-w-md mx-auto">
+                        <div class="absolute inset-0 bg-blue-200 rounded-xl transform rotate-3"></div>
+                        <div class="relative bg-white p-8 rounded-xl shadow-2xl transform hover:rotate-1 transition-all duration-300">
+                            <div class="bg-gradient-to-br from-blue-100 to-white p-6 rounded-lg">
+                                <h3 class="heading-font text-2xl font-bold text-blue-800 mb-4">Daily Brain Boost</h3>
+                                <div class="space-y-4">
+                                    <div class="bg-blue-600 text-white p-4 rounded-lg">
+                                        <p class="font-semibold">Memory Match</p>
+                                        <p class="text-sm">3 Difficulty Levels</p>
+                                    </div>
+                                    <div class="bg-white border-2 border-blue-100 p-4 rounded-lg">
+                                        <p class="font-semibold text-blue-800">Word Recall</p>
+                                        <p class="text-sm text-gray-600">Boost Vocabulary</p>
+                                    </div>
+                                    <div class="bg-white border-2 border-blue-100 p-4 rounded-lg">
+                                        <p class="font-semibold text-blue-800">Number Sequence</p>
+                                        <p class="text-sm text-gray-600">Improve Focus</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="features" class="bg-gradient-to-br from-gray-50 to-white py-12 md:py-16">
+    <!-- Introducing Stay Sharp Section -->
+    <section id="introducing" class="bg-white py-16 md:py-20 section-divider">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="heading-font text-3xl md:text-4xl font-semibold mb-10 text-blue-700">
+                Introducing Stay Sharp
+            </h3>
+            <p class="text-base text-gray-700 mb-12 max-w-2xl mx-auto">
+                A collection designed to help seniors reclaim their mental edge and live with clarity, confidence, and joy.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-blue-50 shadow-md rounded-lg hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
+                    <h4 class="heading-font text-xl font-semibold mb-3 text-blue-600">Stronger Connections</h4>
+                    <p class="text-base text-gray-700">Recall names and faces with ease.</p>
+                </div>
+                <div class="p-6 bg-blue-50 shadow-md rounded-lg hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
+                    <h4 class="heading-font text-xl font-semibold mb-3 text-blue-600">Ease of Tasks</h4>
+                    <p class="text-base text-gray-700">Manage daily tasks confidently.</p>
+                </div>
+                <div class="p-6 bg-blue-50 shadow-md rounded-lg hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
+                    <h4 class="heading-font text-xl font-semibold mb-3 text-blue-600">Confident Conversations</h4>
+                    <p class="text-base text-gray-700">Engage and share your wisdom.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Makes Stay Sharp Different Section -->
+    <section id="features" class="bg-gradient-to-br from-gray-50 to-white py-16 md:py-20 section-divider">
         <div class="container mx-auto px-4">
-            <h3 class="heading-font text-2xl md:text-3xl font-semibold mb-8 text-center text-blue-700">
+            <h3 class="heading-font text-3xl md:text-4xl font-semibold mb-10 text-center text-blue-700">
                 What Makes Stay Sharp Different?
             </h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="space-y-6">
+                <div class="space-y-8">
                     <div class="bg-white p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                        <h4 class="heading-font text-xl font-semibold mb-2 text-blue-600">Designed With You in Mind</h4>
-                        <p class="text-gray-700">
-                            Unlike generic brain training, Stay Sharp understands the unique needs of seniors. We’ve focused on comfort, accessibility, engaging variety, real-world relevance, and a positive and encouraging approach.
+                        <h4 class="heading-font text-xl font-semibold mb-3 text-blue-600">Designed for Seniors</h4>
+                        <p class="text-base text-gray-700">
+                            Focused on comfort, accessibility, and real-world relevance.
                         </p>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                        <h4 class="heading-font text-xl font-semibold mb-2 text-blue-600">Holistic Wellness</h4>
-                        <p class="text-gray-700">
-                            We recognize that a healthy mind is connected to social interaction, emotional well-being, and physical activity.
+                        <h4 class="heading-font text-xl font-semibold mb-3 text-blue-600">Holistic Wellness</h4>
+                        <p class="text-base text-gray-700">
+                            Supports social, emotional, and physical well-being.
                         </p>
                     </div>
                 </div>
-                <div class="space-y-6">
+                <div class="space-y-8">
                     <div class="bg-white p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                        <h4 class="heading-font text-xl font-semibold mb-2 text-blue-600">Comfort & Accessibility</h4>
-                        <p class="text-gray-700">
-                            Large, clear fonts, simple instructions, and a user-friendly layout make every game enjoyable, regardless of your experience with technology.
+                        <h4 class="heading-font text-xl font-semibold mb-3 text-blue-600">Comfort & Accessibility</h4>
+                        <p class="text-base text-gray-700">
+                            Clear fonts and simple instructions for all.
                         </p>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                         <h4 class="heading-font text-xl font-semibold mb-2 text-blue-600">Engaging Variety</h4>
-                        <p class="text-gray-700">
-                            77 unique games across a range of categories keep things interesting and challenge different cognitive skills.
+                        <h4 class="heading-font text-xl font-semibold mb-3 text-blue-600">Engaging Variety</h4>
+                        <p class="text-base text-gray-700">
+                            77 unique games to challenge your mind.
                         </p>
                     </div>
-                     <div class="bg-white p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                         <h4 class="heading-font text-xl font-semibold mb-2 text-blue-600">Real-World Relevance</h4>
-                        <p class="text-gray-700">
-                            Games are designed to improve skills you use every day—from remembering appointments to enjoying conversations.
+                    <div class="bg-white p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
+                        <h4 class="heading-font text-xl font-semibold mb-3 text-blue-600">Real-World Relevance</h4>
+                        <p class="text-base text-gray-700">
+                            Improve daily skills like memory and focus.
                         </p>
                     </div>
                 </div>
@@ -119,134 +239,138 @@
         </div>
     </section>
 
-    <section class="bg-blue-50 py-12 md:py-16">
+    <!-- Explore 9 Sections Section -->
+    <section id="explore" class="bg-blue-50 py-16 md:py-20 section-divider">
         <div class="container mx-auto px-4">
-            <h3 class="heading-font text-2xl md:text-3xl font-semibold mb-8 text-center text-blue-700">
+            <h3 class="heading-font text-3xl md:text-4xl font-semibold mb-10 text-center text-blue-700">
                 Explore 9 Sections to Boost Your Brainpower
             </h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-white p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h5 class="heading-font text-lg font-semibold mb-2 text-blue-600">Section 1: Getting Started</h5>
-                    <p class="text-gray-700">An introduction to the benefits of brain training and tips for success.</p>
+                    <h5 class="heading-font text-lg font-semibold mb-3 text-blue-600">Section 1: Getting Started</h5>
+                    <p class="text-base text-gray-700">Benefits and tips for success.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h5 class="heading-font text-lg font-semibold mb-2 text-blue-600">Section 2: Quick Brain Warm-Ups</h5>
-                    <p class="text-gray-700">Simple, fun games to activate your mind and build confidence.</p>
+                    <h5 class="heading-font text-lg font-semibold mb-3 text-blue-600">Section 2: Brain Warm-Ups</h5>
+                    <p class="text-base text-gray-700">Fun games to build confidence.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h5 class="heading-font text-lg font-semibold mb-2 text-blue-600">Section 3: Memory Boosters</h5>
-                    <p class="text-gray-700">Exercises to strengthen both short-term and long-term memory.</p>
+                    <h5 class="heading-font text-lg font-semibold mb-3 text-blue-600">Section 3: Memory Boosters</h5>
+                    <p class="text-base text-gray-700">Strengthen short- and long-term memory.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h5 class="heading-font text-lg font-semibold mb-2 text-blue-600">Section 4: Logic & Reasoning</h5>
-                    <p class="text-gray-700">Puzzles and challenges to sharpen your analytical thinking.</p>
+                    <h5 class="heading-font text-lg font-semibold mb-3 text-blue-600">Section 4: Logic & Reasoning</h5>
+                    <p class="text-base text-gray-700">Sharpen analytical thinking.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h5 class="heading-font text-lg font-semibold mb-2 text-blue-600">Section 5: Problem Solving</h5>
-                    <p class="text-gray-700">Strategic exercises to improve decision-making and adaptability.</p>
+                    <h5 class="heading-font text-lg font-semibold mb-3 text-blue-600">Section 5: Problem Solving</h5>
+                    <p class="text-base text-gray-700">Enhance decision-making skills.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h5 class="heading-font text-lg font-semibold mb-2 text-blue-600">Section 6: Creative Expression</h5>
-                    <p class="text-gray-700">Games to ignite your imagination and boost self-expression.</p>
+                    <h5 class="heading-font text-lg font-semibold mb-3 text-blue-600">Section 6: Creative Expression</h5>
+                    <p class="text-base text-gray-700">Ignite your imagination.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h5 class="heading-font text-lg font-semibold mb-2 text-blue-600">Section 7: Social Connection</h5>
-                    <p class="text-gray-700">Interactive games to strengthen bonds with loved ones.</p>
+                    <h5 class="heading-font text-lg font-semibold mb-3 text-blue-600">Section 7: Social Connection</h5>
+                    <p class="text-base text-gray-700">Strengthen bonds with loved ones.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h5 class="heading-font text-lg font-semibold mb-2 text-blue-600">Section 8: Sensory & Physical Challenges</h5>
-                    <p class="text-gray-700">Combine the body and mind with these challenges!</p>
+                    <h5 class="heading-font text-lg font-semibold mb-3 text-blue-600">Section 8: Sensory Challenges</h5>
+                    <p class="text-base text-gray-700">Engage body and mind.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h5 class="heading-font text-lg font-semibold mb-2 text-blue-600">Section 9: Memory Repetition</h5>
-                    <p class="text-gray-700">Sharpen the mind through repetition!</p>
+                    <h5 class="heading-font text-lg font-semibold mb-3 text-blue-600">Section 9: Memory Repetition</h5>
+                    <p class="text-base text-gray-700">Sharpen through repetition.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="bg-white py-12 md:py-16">
+    <!-- A Few Examples Section -->
+    <section id="examples" class="bg-white py-16 md:py-20 section-divider">
         <div class="container mx-auto px-4">
-            <h3 class="heading-font text-2xl md:text-3xl font-semibold mb-8 text-center text-blue-700">
-                A Few Examples of the Games You’ll Enjoy
+            <h3 class="heading-font text-3xl md:text-4xl font-semibold mb-10 text-center text-blue-700">
+                A Few Examples of Games You’ll Enjoy
             </h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-blue-50 p-4 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h6 class="heading-font text-lg font-semibold mb-2 text-blue-600">Memory Tray</h6>
-                    <p class="text-gray-700">Test your recall of everyday objects.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
+                    <h6 class="heading-font text-lg font-semibold mb-3 text-blue-600">Memory Tray</h6>
+                    <p class="text-base text-gray-700">Recall everyday objects.</p>
                 </div>
-                <div class="bg-blue-50 p-4 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h6 class="heading-font text-lg font-semibold mb-2 text-blue-600">Story Recall</h6>
-                    <p class="text-gray-700">Remember details from engaging short stories.</p>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
+                    <h6 class="heading-font text-lg font-semibold mb-3 text-blue-600">Story Recall</h6>
+                    <p class="text-base text-gray-700">Remember short story details.</p>
                 </div>
-                <div class="bg-blue-50 p-4 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h6 class="heading-font text-lg font-semibold mb-2 text-blue-600">Number Sequence</h6>
-                    <p class="text-gray-700">Challenge your working memory with increasing difficulty.</p>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
+                    <h6 class="heading-font text-lg font-semibold mb-3 text-blue-600">Number Sequence</h6>
+                    <p class="text-base text-gray-700">Challenge your memory.</p>
                 </div>
-                <div class="bg-blue-50 p-4 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h6 class="heading-font text-lg font-semibold mb-2 text-blue-600">Picture Match</h6>
-                    <p class="text-gray-700">Enhance visual recognition skills.</p>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
+                    <h6 class="heading-font text-lg font-semibold mb-3 text-blue-600">Picture Match</h6>
+                    <p class="text-base text-gray-700">Enhance visual recognition.</p>
                 </div>
-                <div class="bg-blue-50 p-4 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h6 class="heading-font text-lg font-semibold mb-2 text-blue-600">Emotion Charades</h6>
-                    <p class="text-gray-700">Improve communication with non-verbal skills.</p>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
+                    <h6 class="heading-font text-lg font-semibold mb-3 text-blue-600">Emotion Charades</h6>
+                    <p class="text-base text-gray-700">Improve non-verbal skills.</p>
                 </div>
-                <div class="bg-blue-50 p-4 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h6 class="heading-font text-lg font-semibold mb-2 text-blue-600">Partner Trivia</h6>
-                    <p class="text-gray-700">Strengthen relationships and active listening skills.</p>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
+                    <h6 class="heading-font text-lg font-semibold mb-3 text-blue-600">Partner Trivia</h6>
+                    <p class="text-base text-gray-700">Strengthen relationships.</p>
                 </div>
-                <div class="bg-blue-50 p-4 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h6 class="heading-font text-lg font-semibold mb-2 text-blue-600">Riddle Me This</h6>
-                    <p class="text-gray-700">Solve various riddles that help improve cognitive skills.</p>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
+                    <h6 class="heading-font text-lg font-semibold mb-3 text-blue-600">Riddle Me This</h6>
+                    <p class="text-base text-gray-700">Solve cognitive riddles.</p>
                 </div>
-                <div class="bg-blue-50 p-4 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h6 class="heading-font text-lg font-semibold mb-2 text-blue-600">Texture Touch</h6>
-                    <p class="text-gray-700">Improve cognitive and sensory skills.</p>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
+                    <h6 class="heading-font text-lg font-semibold mb-3 text-blue-600">Texture Touch</h6>
+                    <p class="text-base text-gray-700">Boost sensory skills.</p>
                 </div>
-                <div class="bg-blue-50 p-4 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h6 class="heading-font text-lg font-semibold mb-2 text-blue-600">Life Story Timeline</h6>
-                    <p class="text-gray-700">Share key personal stories that help in strengthening relationships and bonds!</p>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
+                    <h6 class="heading-font text-lg font-semibold mb-3 text-blue-600">Life Story Timeline</h6>
+                    <p class="text-base text-gray-700">Share personal stories.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="bg-gradient-to-br from-blue-100 to-purple-100 py-12 md:py-16 text-gray-800">
+    <!-- Benefits Section -->
+    <section id="benefits" class="bg-gradient-to-br from-blue-100 to-purple-100 py-16 md:py-20 text-gray-800 section-divider">
         <div class="container mx-auto px-4 text-center">
-            <h3 class="heading-font text-2xl md:text-3xl font-semibold mb-8 text-blue-700">
-                The Benefits of a Sharper Mind – Backed by Science
+            <h3 class="heading-font text-3xl md:text-4xl font-semibold mb-10 text-blue-700">
+                Benefits of a Sharper Mind
             </h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-white p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h4 class="heading-font text-xl font-semibold mb-2 text-blue-600">Improved Memory</h4>
-                    <p class="text-gray-700">Recall names, dates, and important information with greater ease.</p>
+                    <h4 class="heading-font text-xl font-semibold mb-3 text-blue-600">Improved Memory</h4>
+                    <p class="text-base text-gray-700">Recall names and dates easily.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h4 class="heading-font text-xl font-semibold mb-2 text-blue-600">Enhanced Cognitive Function</h4>
-                    <p class="text-gray-700">Sharper thinking, problem-solving, and mental agility.</p>
+                    <h4 class="heading-font text-xl font-semibold mb-3 text-blue-600">Enhanced Cognition</h4>
+                    <p class="text-base text-gray-700">Sharper thinking and problem-solving.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h4 class="heading-font text-xl font-semibold mb-2 text-blue-600">Increased Focus</h4>
-                    <p class="text-gray-700">Better concentration and attention.</p>
+                    <h4 class="heading-font text-xl font-semibold mb-3 text-blue-600">Increased Focus</h4>
+                    <p class="text-base text-gray-700">Better concentration.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h4 class="heading-font text-xl font-semibold mb-2 text-blue-600">Cognitive Resilience</h4>
-                    <p class="text-gray-700">Proactive support for long-term brain health.</p>
+                    <h4 class="heading-font text-xl font-semibold mb-3 text-blue-600">Cognitive Resilience</h4>
+                    <p class="text-base text-gray-700">Support long-term brain health.</p>
                 </div>
-                 <div class="bg-white p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h4 class="heading-font text-xl font-semibold mb-2 text-blue-600">Improved Mood</h4>
-                    <p class="text-gray-700">Increased feelings of confidence, joy, and connection.</p>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
+                    <h4 class="heading-font text-xl font-semibold mb-3 text-blue-600">Improved Mood</h4>
+                    <p class="text-base text-gray-700">Feel confident and connected.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="bg-white py-12 md:py-16">
+    <!-- What You'll Receive Section -->
+    <section id="receive" class="bg-white py-16 md:py-20 section-divider">
         <div class="container mx-auto px-4 text-center">
-            <h3 class="heading-font text-2xl md:text-3xl font-semibold mb-8 text-blue-700">What You’ll Receive</h3>
-            <ul class="list-disc list-inside space-y-2 text-lg text-gray-700 max-w-md mx-auto">
+            <h3 class="heading-font text-3xl md:text-4xl font-semibold mb-10 text-blue-700">What You’ll Receive</h3>
+            <ul class="list-disc list-inside space-y-4 text-base text-gray-700 max-w-md mx-auto">
                 <li>77 Unique Brain Games</li>
-                <li>Clear, Easy-to-Follow Instructions</li>
+                <li>Clear Instructions</li>
                 <li>Adaptable Difficulty Levels</li>
                 <li>Helpful Tips & Strategies</li>
                 <li>Print-Friendly Format</li>
@@ -254,74 +378,79 @@
         </div>
     </section>
 
-    <section class="bg-gradient-to-br from-gray-50 to-white py-12 md:py-16 text-center">
+    <!-- Ready to Invest Section -->
+    <section id="invest" class="bg-gradient-to-br from-gray-50 to-white py-16 md:py-20 text-center section-divider">
         <div class="container mx-auto px-4">
-            <h3 class="heading-font text-2xl md:text-3xl font-semibold mb-6 text-blue-700">
-                Ready to Invest in Your Mental Well-being?
+            <h3 class="heading-font text-3xl md:text-4xl font-semibold mb-10 text-blue-700">
+                Ready to Invest in Your Mind?
             </h3>
-            <p class="text-lg text-gray-700 mb-8">
-                For just $7.70, Stay Sharp offers incredible value—affordable, accessible, and packed with 77 games to nurture your mind. No special equipment needed—just a pencil, your curiosity, and this book!
+            <p class="text-base text-gray-700 mb-8 max-w-2xl mx-auto">
+                For just $7.70, Stay Sharp offers 77 games to nurture your mind—no equipment needed!
             </p>
-            <a href="#" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-full transition duration-300 ease-in-out shadow-lg hover:shadow-green-500/20 text-lg hover-animate">
-                Click Here to Order Now
+            <a href="#" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-full transition duration-300 ease-in-out shadow-lg hover:shadow-green-500/20 text-lg hover-animate">
+                Order Now
             </a>
         </div>
     </section>
 
-    <section class="bg-blue-50 py-12 md:py-16">
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="bg-blue-50 py-16 md:py-20 section-divider">
         <div class="container mx-auto px-4">
-            <h3 class="heading-font text-2xl md:text-3xl font-semibold mb-8 text-center text-blue-700">What Others Are Saying</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <h3 class="heading-font text-3xl md:text-4xl font-semibold mb-10 text-center text-blue-700">What Others Are Saying</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-white p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <p class="text-gray-700 italic mb-4">“I was starting to worry about my memory, but these games have really helped. I feel more confident and engaged.”</p>
+                    <p class="text-base text-gray-700 italic mb-4">“These games have helped me feel more confident and engaged.”</p>
                     <p class="text-blue-600 font-semibold">— Margaret, 72</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <p class="text-gray-700 italic mb-4">“This book is perfect for seniors. It’s easy to read and the games are just the right level of challenge.”</p>
+                    <p class="text-base text-gray-700 italic mb-4">“Perfect for seniors—easy to read and just the right challenge.”</p>
                     <p class="text-blue-600 font-semibold">— George, 80</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="bg-white py-12 md:py-16 text-center">
+    <!-- Try Risk-Free Section -->
+    <section id="risk-free" class="bg-white py-16 md:py-20 text-center section-divider">
         <div class="container mx-auto px-4">
-            <h3 class="heading-font text-2xl md:text-3xl font-semibold mb-6 text-blue-700">Try Stay Sharp Risk-Free!</h3>
-            <p class="text-lg text-gray-700 mb-8">
-                We’re so confident you’ll love it, we offer a 30-day money-back guarantee. If it doesn’t meet your expectations, get a full refund—no questions asked.
+            <h3 class="heading-font text-3xl md:text-4xl font-semibold mb-10 text-blue-700">Try Stay Sharp Risk-Free!</h3>
+            <p class="text-base text-gray-700 mb-8 max-w-2xl mx-auto">
+                We offer a 30-day money-back guarantee. If it’s not for you, get a full refund.
             </p>
-            <a href="#" class="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-3 px-6 rounded-full transition duration-300 ease-in-out shadow-lg hover:shadow-indigo-500/20 text-lg hover-animate">
-                Click Here to Order Now
+            <a href="#" class="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-3 px-8 rounded-full transition duration-300 ease-in-out shadow-lg hover:shadow-indigo-500/20 text-lg hover-animate">
+                Order Now
             </a>
         </div>
     </section>
 
-    <section class="bg-blue-50 py-12 md:py-16">
+    <!-- FAQ Section -->
+    <section id="faq" class="bg-blue-50 py-16 md:py-20 section-divider">
         <div class="container mx-auto px-4">
-            <h3 class="heading-font text-2xl md:text-3xl font-semibold mb-8 text-center text-blue-700">Frequently Asked Questions</h3>
-            <div class="space-y-4">
-                <div class="bg-white p-4 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h5 class="heading-font text-lg font-semibold mb-2 text-blue-600">Is this suitable for those with cognitive impairments?</h5>
-                    <p class="text-gray-700">Consult with a healthcare professional. Games can be adapted.</p>
+            <h3 class="heading-font text-3xl md:text-4xl font-semibold mb-10 text-center text-blue-700">Frequently Asked Questions</h3>
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
+                    <h5 class="heading-font text-lg font-semibold mb-3 text-blue-600">Is this suitable for cognitive impairments?</h5>
+                    <p class="text-base text-gray-700">Consult a professional; games can be adapted.</p>
                 </div>
-                <div class="bg-white p-4 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h5 class="heading-font text-lg font-semibold mb-2 text-blue-600">DoI need special equipment?</h5>
-                    <p class="text-gray-700">No—just the book, a pencil, and your mind!</p>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
+                    <h5 class="heading-font text-lg font-semibold mb-3 text-blue-600">Do I need special equipment?</h5>
+                    <p class="text-base text-gray-700">No—just a pencil and the book!</p>
                 </div>
-                <div class="bg-white p-4 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
-                    <h5 class="heading-font text-lg font-semibold mb-2 text-blue-600">How often should I play?</h5>
-                    <p class="text-gray-700">1-2 games a day is a great start.</p>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-animate hover:scale-[1.02] hover:shadow-blue-500/20">
+                    <h5 class="heading-font text-lg font-semibold mb-3 text-blue-600">How often should I play?</h5>
+                    <p class="text-base text-gray-700">Start with 1-2 games a day.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="bg-gradient-to-br from-white to-blue-100 py-12 md:py-16 text-center">
+    <!-- Final CTA Section -->
+    <section id="final-cta" class="bg-gradient-to-br from-white to-blue-100 py-16 md:py-20 text-center section-divider">
         <div class="container mx-auto px-4">
-            <h3 class="heading-font text-2xl md:text-3xl font-semibold mb-6 text-blue-700">Don’t wait to nurture your mind.</h3>
-            <p class="text-lg text-gray-700 mb-8">Order Stay Sharp today for only $7.70!</p>
-             <a href="#" class="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-3 px-6 rounded-full transition duration-300 ease-in-out shadow-lg hover:shadow-indigo-500/20 text-lg hover-animate">
-                Click Here to Order Now
+            <h3 class="heading-font text-3xl md:text-4xl font-semibold mb-10 text-blue-700">Don’t Wait to Nurture Your Mind</h3>
+            <p class="text-base text-gray-700 mb-8">Order Stay Sharp today for only $7.70!</p>
+            <a href="#" class="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-3 px-8 rounded-full transition duration-300 ease-in-out shadow-lg hover:shadow-indigo-500/20 text-lg hover-animate">
+                Order Now
             </a>
         </div>
     </section>
@@ -333,12 +462,52 @@
     </footer>
 
     <script>
-        // Simple scroll animation for the "Learn More" button
+        // Smooth scroll for the "Start Your Brain Journey Now" button
         document.querySelector('a[href="#features"]').addEventListener('click', function(e) {
             e.preventDefault();
             document.querySelector('#features').scrollIntoView({
                 behavior: 'smooth'
             });
+        });
+
+        // Smooth scroll for sticky navigation dots
+        document.querySelectorAll('.nav-dot').forEach(dot => {
+            dot.addEventListener('click', function(e) {
+                e.preventDefault();
+                const sectionId = this.getAttribute('href').substring(1);
+                document.getElementById(sectionId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Intersection Observer to highlight active dot
+        const sections = document.querySelectorAll('section[id]');
+        const navDots = document.querySelectorAll('.nav-dot');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.3 // Trigger when 30% of the section is in view
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Remove active class from all dots
+                    navDots.forEach(dot => dot.classList.remove('active'));
+                    // Add active class to the corresponding dot
+                    const sectionId = entry.target.id;
+                    const activeDot = document.querySelector(`.nav-dot[data-section="${sectionId}"]`);
+                    if (activeDot) {
+                        activeDot.classList.add('active');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
         });
     </script>
 </body>
