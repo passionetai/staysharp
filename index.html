@@ -96,12 +96,26 @@
 
     <header class="bg-white shadow-md py-4">
         <div class="container mx-auto px-4 flex justify-center">
-            <h1 class="heading-font text-2xl font-semibold text-blue-600">Stay Sharp</h1>
+            <marquee behavior="scroll" direction="left" scrollamount="5" class="w-full max-w-2xl">
+                <h1 class="heading-font text-2xl font-semibold text-blue-600">Stay Sharp: 77 Brain Games for Seniors</h1>
+            </marquee>
         </div>
     </header>
 
-   <!-- Hero Header Section (Updated with Reference Spacing) -->
-<section id="hero" class="bg-gradient-to-br from-blue-50 to-indigo-50 py-16 md:py-20 section-divider section">
+    <!-- Limited Time Offer Banner -->
+    <div class="bg-orange-500 text-white py-3 px-4 text-center sticky top-0 z-50">
+        <div class="container mx-auto">
+            <p class="text-lg font-semibold">
+                🎉 Limited Time Offer: 50% OFF - Only <span class="text-2xl font-bold">$7.70</span> Instead of $15.40
+                <span class="inline-block ml-2 bg-white text-orange-500 px-3 py-1 rounded-full text-sm font-bold">
+                    Ends in <span id="countdown" class="font-mono">48:00:00</span>
+                </span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Hero Header Section -->
+    <section id="hero" class="bg-gradient-to-br from-blue-50 to-indigo-50 py-16 md:py-20 section-divider section">
     <div class="container mx-auto px-4">
         <!-- Changed gap-12 to gap-[300px] to add 300px space -->
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-[300px]">
@@ -422,20 +436,48 @@
         </div>
     </section>
 
-    <!-- Ready to Invest Section -->
+    <!-- Investment Section -->
     <section id="invest" class="bg-gradient-to-br from-gray-50 to-white py-16 md:py-20 text-center section-divider section">
         <div class="container mx-auto px-4">
             <h3 class="heading-font text-3xl md:text-4xl font-semibold mb-10 text-blue-700">
                 Ready to Invest in Your Mind?
             </h3>
             <p class="text-base text-gray-700 mb-8 max-w-2xl mx-auto">
-                For just $7.70, Stay Sharp offers 77 games to nurture your mind—no equipment needed!
+                For just <span class="text-2xl font-bold text-orange-500">$7.70</span>, Stay Sharp offers 77 games to nurture your mind—no equipment needed!
             </p>
             <a href="#" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-full transition duration-300 ease-in-out shadow-lg hover:shadow-green-500/20 text-lg hover-animate">
                 Order Now
             </a>
         </div>
     </section>
+
+    <!-- Add this to your existing script section -->
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const countdownElement = document.getElementById('countdown');
+            let [hours, minutes, seconds] = countdownElement.textContent.split(':').map(Number);
+            
+            if (seconds > 0) {
+                seconds--;
+            } else if (minutes > 0) {
+                minutes--;
+                seconds = 59;
+            } else if (hours > 0) {
+                hours--;
+                minutes = 59;
+                seconds = 59;
+            }
+    
+            countdownElement.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (hours === 0 && minutes === 0 && seconds === 0) {
+                clearInterval(countdownInterval);
+            }
+        }
+    
+        const countdownInterval = setInterval(updateCountdown, 1000);
+    </script>
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="bg-blue-50 py-16 md:py-20 section-divider section">
@@ -491,8 +533,8 @@
     <!-- Final CTA Section -->
     <section id="final-cta" class="bg-gradient-to-br from-white to-blue-100 py-16 md:py-20 text-center section-divider section">
         <div class="container mx-auto px-4">
-            <h3 class="heading-font text-3xl md:text-4xl font-semibold mb-10 text-blue-700">Don’t Wait to Nurture Your Mind</h3>
-            <p class="text-base text-gray-700 mb-8">Order Stay Sharp today for only $7.70!</p>
+            <h3 class="heading-font text-3xl md:text-4xl font-semibold mb-10 text-blue-700">Don't Wait to Nurture Your Mind</h3>
+            <p class="text-base text-gray-700 mb-8">Order Stay Sharp today for only <span class="text-2xl font-bold text-orange-500">$7.70</span>!</p>
             <a href="#" class="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-3 px-8 rounded-full transition duration-300 ease-in-out shadow-lg hover:shadow-indigo-500/20 text-lg hover-animate">
                 Order Now
             </a>
@@ -501,7 +543,7 @@
 
     <footer class="bg-gray-800 text-white py-4">
         <div class="container mx-auto px-4 text-center text-sm">
-            <p>© 2024 Stay Sharp. All rights reserved.</p>
+            <p>© 2025 Stay Sharp. All rights reserved.</p>
         </div>
     </footer>
 
